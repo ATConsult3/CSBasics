@@ -60,7 +60,7 @@ namespace andestech.learning.cs2022
                 }
                 else
                 {
-                    WriteLine("Wrong number format? try again.\n");
+                    WriteLine("Wrong number format, try again.\n");
                 }
             }
             WriteLine("Thank you.");
