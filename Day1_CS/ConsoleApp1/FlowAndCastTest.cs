@@ -22,9 +22,9 @@ namespace andestech.learning.cs2022
                 Write("Введите b:"); b = ReadLine();
                 if (b == "x") break;
 
-
                 int a1 = int.Parse(a);
                 int b1 = int.Parse(b);
+                                
 
                 WriteLine($"{a1} + {b1} = {a1 + b1}\n");
             }
