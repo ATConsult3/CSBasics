@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
+using System.Globalization;
 
 using static System.Console;
 
@@ -14,6 +16,8 @@ namespace andestech.learning.cs2022
 
         static void Main(string[] args)
         {
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;  
+
             int N = 144;
 
             WriteLine("--- Vars Test ---");
@@ -71,6 +75,20 @@ namespace andestech.learning.cs2022
             int res = 2*b2;
             --b2;
             WriteLine($"res={res}, b2={b2}");
+
+            //------------------- FLOATS ------------------
+
+            double d1 = 1.2345678901234567890;
+            float  f1 = 1.2345678901234567890f;
+            decimal dec1 = 1.234567890123456789012345678901234567890M;
+            WriteLine(d1 + "\n" + f1 + "\n" + dec1);
+
+            //------------------ BOOLENS -------------------
+            bool bool1 = true;
+            bool bool2 = 1 < 0;
+
+
+
 
         }
     }
