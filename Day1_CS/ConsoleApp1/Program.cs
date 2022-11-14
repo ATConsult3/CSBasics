@@ -6,12 +6,10 @@ namespace andestech.learning.cs2022
 {
     class Program
     {
-        static void DebugTest() {
-
+        static void DebugTest()
+        {
             WriteLine("Salute from Debug test!");
-
         }
-
 
         static void Main(string[] args)
         {
