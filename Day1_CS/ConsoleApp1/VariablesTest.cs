@@ -83,7 +83,7 @@ namespace andestech.learning.cs2022
             decimal dec1 = 1.234567890123456789012345678901234567890M;
             WriteLine(d1 + "\n" + f1 + "\n" + dec1);
 
-            //------------------ BOOLENS -------------------
+            //------------------ BOOLEANS -------------------
             bool bool1 = true;
             bool bool2 = 1 < 0;
 
