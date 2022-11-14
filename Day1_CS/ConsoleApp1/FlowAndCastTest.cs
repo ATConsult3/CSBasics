@@ -55,8 +55,8 @@ namespace andestech.learning.cs2022
                 int a1,b1;
 
                 if (int.TryParse(a, out a1) && int.TryParse(b, out b1))
-                { 
-                    WriteLine($"{a1} + {b1} = {a1 + b1}\n"); 
+                {
+                    checked { WriteLine($"{a1} + {b1} = {a1 + b1}\n"); } 
                 }
                 else
                 {
