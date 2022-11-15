@@ -63,12 +63,63 @@ namespace andestech.learning.cs2022
 
         }
 
+        private static void LoopTest()
+        {
+            // ---- FOR -------
+            WriteLine("for ------> ");
+            int N = 5;
+            for (int i = 0, j = 6; i < N; i++, j--)
+            {
+                Write($"{i}-{j}, ");
+            }
+            Write("\b\b.\n");
+
+            {
+                int i = 0;
+                for (; ; )
+                {
+                    //if (!(i < N)) break;
+                    if(i >= N) break;
+                    Write($"{i}, ");
+                    ++i; // i += 2;
+                }
+            }
+            Write("\b\b.\n");
+
+            // ---- WHILE -------
+            WriteLine("while ------> ");
+            {
+                int i = 0;
+                while (i < N)
+                {
+                    Write($"{i}, ");
+                    ++i;
+                }
+            }
+            Write("\b\b.\n");
+
+            // ---- DO WHILE -------
+
+            WriteLine("do ------> ");
+            {
+                int i = 0;
+                do
+                {
+                    Write($"{i}, ");
+                    ++i;
+                }
+                while (i < N);
+            }
+            Write("\b\b.\n");
+
+        }
+
 
         static void Main(string[] args)
         {
             WriteLine("----- Test enums, switch|case, loops");
-            EnumTest();
-
+            //EnumTest();
+            LoopTest();
 
             WriteLine("----- End of Main ------");
         }
