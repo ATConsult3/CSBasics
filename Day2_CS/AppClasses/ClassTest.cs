@@ -45,8 +45,31 @@ namespace andestech.learning.cs2022
             WriteLine("MAX_Y=" + Sprite2.MAX_Y);
             Sprite2 s22 =  new Sprite2(color:5,x:15,y:125);
             s22.echo();
+            // Sprite3 & Color test
 
+            //Sprite3 s3 = new Sprite3(x:0,y:120,color:new Color(10,35,67));
+            //s3.echo();
 
+            // Player class test
+            WriteLine("---------- PLAYER ------------");
+            Player player1 = new Player(x: 230, y: 520, color: new Color(0, 167, 167));
+            player1.echo();
+
+            Sprite3 s4 = new Player(x: 100, y: 554, color: new Color(0, 120, 167));
+            Sprite3 s5 = new Referee(x: 10, y: 55, color: new Color(0, 0, 167));
+
+            Move(s4); Move2(s5);
+           
         }
+
+        public static void Move(Sprite3 s)
+        {
+            s.echo(); s.move(10, 10); s.rotate(10);  s.echo();
+        }
+        public static void Move2(IMovable s)
+        {
+            s.move(-1, 10); s.rotate(15);
+        }
+
     }
 }

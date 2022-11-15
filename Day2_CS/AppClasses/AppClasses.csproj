@@ -23,9 +23,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-	<LangVersion>8.0</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
-  
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
@@ -48,7 +47,12 @@
   <ItemGroup>
     <Compile Include="A.cs" />
     <Compile Include="ClassTest.cs" />
+    <Compile Include="Color.cs" />
+    <Compile Include="IMovable.cs" />
+    <Compile Include="Referee.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sprite3.cs" />
     <Compile Include="Sprite2.cs" />
     <Compile Include="Sprite.cs" />
   </ItemGroup>
