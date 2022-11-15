@@ -16,8 +16,8 @@ namespace andestech.learning.cs2022.game
         private int _y;
         //private int _color;
         //private const int MAX_Y = 600, MIN_Y = 0;
-        public static int MAX_Y { get; private set; } = 600;
-        public static int MIN_Y { get; private set; } = 0;
+        //public static int MAX_Y { get; private set; } = 600;
+        public static readonly int MIN_Y = 0, MAX_Y = 600;
        
 
 
