@@ -10,6 +10,14 @@ namespace andestech.learning.cs2022
     class ArrayTest
     {
 
+        private static int Summa(int mult=1, params int[] numbers)
+        {
+            int summa = 0;
+            foreach (int element in numbers) summa += element;
+            return summa*mult;
+        }
+
+
         private static void PrintIntArray(int[] arr)
         {
             Write("[");
@@ -45,10 +53,11 @@ namespace andestech.learning.cs2022
             PrintIntArray(arr0);
             FillIntArrayByRandomValues(arr0);
             PrintIntArray(arr0);
-            FillIntArrayByRandomValues(arr0);
-            PrintIntArray(arr0);
-
-
+            // FillIntArrayByRandomValues(arr0);
+            // PrintIntArray(arr0);
+            WriteLine($"Summa = {Summa(1,new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 })}.");
+            WriteLine($"Summa = {Summa(numbers:new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, mult:2)}.");
+            WriteLine($"Summa = {Summa(10, 1, 2, 3, 4, 5, 6, 7, 8, 9)}.");
         }
 
 
