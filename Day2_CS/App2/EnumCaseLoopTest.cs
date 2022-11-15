@@ -65,7 +65,9 @@ namespace andestech.learning.cs2022
 
         private static void LoopTest()
         {
+
             // ---- FOR -------
+            #region ---- FOR -------
             WriteLine("for ------> ");
             int N = 5;
             for (int i = 0, j = 6; i < N; i++, j--)
@@ -85,6 +87,7 @@ namespace andestech.learning.cs2022
                 }
             }
             Write("\b\b.\n");
+            #endregion
 
             // ---- WHILE -------
             WriteLine("while ------> ");
