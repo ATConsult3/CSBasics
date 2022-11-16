@@ -13,7 +13,7 @@ namespace andestech.learning.cs2022
 
     }
 
-    class A : Base, ICloneable {
+    class A : Base, ICloneable, IComparable<A> {
         public int DataA { get; set; }
 
         public object Clone()
@@ -24,9 +24,14 @@ namespace andestech.learning.cs2022
            // return MemberwiseClone();
         }
 
+        public int CompareTo(A obj)
+        {
+            return this.Data - obj.Data ;
+        }
+
         public override string ToString()
         {
-            return $"A: {Data}, {DataA}";
+            return $"A: {Data},{DataA}.";
         }
 
     }

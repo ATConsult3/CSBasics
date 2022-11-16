@@ -7,9 +7,15 @@ using static System.Console;
 
 namespace andestech.learning.cs2022
 {
-    class Container<T>
+    class Container<T> where T: ICloneable
     { 
      public T Value { get; set; }
+        //public T getTwo() { return Value + Value; }
+        public object CloneValue() { 
+         
+            return Value.Clone();
+        
+        }
     }
 
     class ContainerDatas<T>
@@ -80,7 +86,7 @@ namespace andestech.learning.cs2022
             WriteLine($"{a1} ---- {a2}");
             WriteLine($"{a1.GetHashCode()} ---- {a2.GetHashCode()}");
 
-            Container<int> c1 = new Container<int> { Value = 11122233 }; //Value = "1.2222"; }
+            //Container<int> c1 = new Container<int> { Value = 11122233 }; //Value = "1.2222"; }
             Container<A> a3 = new Container<A> { Value = new A() };
 
             ContainerDatas<A> datas = new ContainerDatas<A>(5);
