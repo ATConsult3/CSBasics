@@ -8,8 +8,45 @@ using static System.Console;
 
 namespace andestech.learning.cs2022
 {
-    internal class Program
+
+    class AccounException : Exception { 
+    
+     public AccounException(string message): base(message) {
+        // code.....
+        
+        }
+
+     // ....  
+    
+    }
+
+    public class Account {
+ 
+      private decimal _deposite;
+      private static decimal MAX_DEPOSITE = 100_000, MIN_DEPOSITE = 10;
+      public decimal Deposite
+        { 
+            get {return _deposite; }
+            private set {
+                if (value < MIN_DEPOSITE || value > MAX_DEPOSITE)
+                    throw new AccounException($"Deposite out of bounds: {value}, transaction cancelled");
+                _deposite = value; 
+            }
+        }
+        public Account(decimal deposite) {
+            Deposite = deposite;
+        }
+
+    
+    }
+
+
+    class Program
     {
+
+        
+     
+
         static void Main(string[] args)
         {
             string a = new String('a', 10);
@@ -32,6 +69,11 @@ namespace andestech.learning.cs2022
             WriteLine(ReferenceEquals(b, c));
 
             Object o;
+            // User Exception test
+            Account acc1 = new Account(10.1M);
+            Account acc2 = new Account(9.99M);
+
+
 
             // Exception test
 
