@@ -13,11 +13,38 @@ namespace andestech.learning.cs2022
 
     }
 
-    class A : Base {
+    class A : Base, ICloneable {
         public int DataA { get; set; }
+
+        public object Clone()
+        {
+            //....
+            A a = new A {Data = this.Data, DataA = this.DataA};
+            return a;
+           // return MemberwiseClone();
+        }
+
+        public override string ToString()
+        {
+            return $"A: {Data}, {DataA}";
+        }
+
     }
     class B : Base {
         public int DataB { get; set; }
+    }
+
+    struct C 
+    {
+        public int Data { get; set; }
+
+    }
+
+    struct D 
+    {
+        public int Data { get; set; }
+
+      
     }
 
 }
