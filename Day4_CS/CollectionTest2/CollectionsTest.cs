@@ -106,9 +106,13 @@ namespace andestech.learning.cs2022
             {
                 Write(">: ");
                 string inp = ReadLine();
-                if (inp == null || inp=="") continue;
+                if(inp == null || inp == "") continue;
                 if (inp.Trim().ToLower() == "x") break;
                 string[] parts = inp.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                if (parts.Length != 3) continue;
+
+                CursorLeft = inp.Length + 3; CursorTop--;
+                
                 double a, b;
                 //todo.Keys.W
                 if (Double.TryParse(parts[0], out a) && Double.TryParse(parts[2], out b) &&
@@ -117,11 +121,11 @@ namespace andestech.learning.cs2022
                     WriteLine(" = " + todo[parts[1]](a, b));
                 }
                 else {
-                    WriteLine("Wrong number or operation format. Try again.");
+                    WriteLine(" --> Wrong number or operation format. Try again.");
                 }
 
             }
-            WriteLine("Thank you!");
+            WriteLine("\nThank you!");
         }
     }
 }
