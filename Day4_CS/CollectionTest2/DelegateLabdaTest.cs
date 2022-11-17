@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using static andestech.learning.cs2022.utils.Utils;
 using System.Collections.ObjectModel;
 using static System.Console;
+using andestech.learning.cs2022.library;
 
 namespace andestech.learning.cs2022
 {
@@ -55,6 +56,21 @@ namespace andestech.learning.cs2022
             gh2("Андрей", 5);
             echo("test delegate as argument");
             sayAll(SayHDUD, "Andrei", 2);
+
+            echo("EVENTS",'+');
+
+            Book book1 = new Book { Author = "А.Толстой", Title = "Аэлита" };
+            Book book2 = new Book { Author = "J.London", Title = "White silence" };
+
+            Library library = new Library();
+
+            library.NewBook += m => WriteLine($"Subscriber 1: {m}");
+            
+            library.AddBook(book1);
+            library.NewBook += m => WriteLine($"Подписчик 2: {m}");
+
+            library.AddBook(book2);
+
 
         }
 
