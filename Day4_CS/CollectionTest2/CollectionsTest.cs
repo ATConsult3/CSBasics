@@ -104,14 +104,15 @@ namespace andestech.learning.cs2022
 
             while (true)
             {
-                Write(">: ");
+                string prompt = ">: ";
+                Write(prompt);
                 string inp = ReadLine();
-                if(inp == null || inp == "") continue;
+                if (inp == null || inp == "") continue;
                 if (inp.Trim().ToLower() == "x") break;
                 string[] parts = inp.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
                 if (parts.Length != 3) continue;
 
-                CursorLeft = inp.Length + 3; CursorTop--;
+                CursorLeft = inp.Length + prompt.Length; CursorTop--;
                 
                 double a, b;
                 //todo.Keys.W
