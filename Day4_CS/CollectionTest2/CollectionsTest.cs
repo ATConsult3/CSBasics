@@ -8,6 +8,8 @@ using System.Diagnostics;
 using static System.Console;
 using static andestech.learning.cs2022.utils.Utils;
 using System.Collections.ObjectModel;
+using System.Globalization;
+using System.Threading;
 
 namespace andestech.learning.cs2022
 {
@@ -83,8 +85,43 @@ namespace andestech.learning.cs2022
             var SortedGreets = greets.OrderBy(x => x.Key).Reverse().ToDictionary(x=> x.Key);
             foreach (string key in SortedGreets.Keys) WriteLine($"{key} ---> {SortedGreets[key]}");
 
-         //   echo("Калькулятор"); WriteLine();
+            echo("Калькулятор"); WriteLine();
+            string  expression = "1.01 /   3.45345";
 
+            Dictionary<string, Func<double, double, double>> todo =
+                new Dictionary<string, Func<double, double, double>>
+                {
+                    {"+", (a,b) => a+b},
+                    {"-", (a,b) => a-b},
+                    {"*", (a,b) => a*b},
+                    {"/", (a,b) => a/b},
+                    {"**", (a,b) => Math.Pow(a,b)}
+                };
+
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+
+            WriteLine("Press 'x' to exit. Enjoy!");
+
+            while (true)
+            {
+                Write(">: ");
+                string inp = ReadLine();
+                if (inp == null || inp=="") continue;
+                if (inp.Trim().ToLower() == "x") break;
+                string[] parts = inp.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+                double a, b;
+                //todo.Keys.W
+                if (Double.TryParse(parts[0], out a) && Double.TryParse(parts[2], out b) &&
+                    todo.ContainsKey(parts[1]) )
+                {
+                    WriteLine(" = " + todo[parts[1]](a, b));
+                }
+                else {
+                    WriteLine("Wrong number or operation format. Try again.");
+                }
+
+            }
+            WriteLine("Thank you!");
         }
     }
 }
