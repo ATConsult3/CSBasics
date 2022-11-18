@@ -16,6 +16,8 @@ namespace andestech.learning.cs2022.library
     {
       private static Random r = new Random((int)DateTime.Now.Ticks);
       private int _id = r.Next(0, 4_000_000_00);
+
+      //[JsonIgnore]  
       public int ID { get => _id; }
 
       

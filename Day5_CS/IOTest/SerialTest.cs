@@ -66,6 +66,7 @@ namespace andestech.learning.cs2022
             // ------------  JSON serializing
             echo("JSON serializing");
             JsonSerializer json = new JsonSerializer();
+            //json.
             using (TextWriter fs = new StreamWriter(
                 new FileStream("library.json",FileMode.OpenOrCreate), Encoding.UTF8))
             {
