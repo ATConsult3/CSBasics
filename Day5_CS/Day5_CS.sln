@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttributesAssemblyLoadTest"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicBindingTest", "DynamicBindingTest\DynamicBindingTest.csproj", "{17413A21-7560-406E-8A07-3D86E3657B1E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOTest", "IOTest\IOTest.csproj", "{32617299-6FAE-4EE3-BE8A-9127AD7C98BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{17413A21-7560-406E-8A07-3D86E3657B1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17413A21-7560-406E-8A07-3D86E3657B1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17413A21-7560-406E-8A07-3D86E3657B1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32617299-6FAE-4EE3-BE8A-9127AD7C98BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32617299-6FAE-4EE3-BE8A-9127AD7C98BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32617299-6FAE-4EE3-BE8A-9127AD7C98BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32617299-6FAE-4EE3-BE8A-9127AD7C98BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
