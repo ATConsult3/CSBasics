@@ -8,7 +8,15 @@ using andestech.learning.cs2022.library;
 using System.IO;
 using System.Text;
 using System.Linq.Expressions;
+
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
+//using System.Text.Json // DOTNET 5,6,...
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+
+
+
 
 namespace andestech.learning.cs2022
 {
@@ -36,8 +44,34 @@ namespace andestech.learning.cs2022
             using (FileStream fs = new FileStream("library.bin", FileMode.OpenOrCreate))
             {
                 lib2 = bf.Deserialize(fs) as Library;
-                echo<Book>(lib2.Books);
+                lib2.echo();
             }
+
+            // ------------  Xml serializing
+            echo("Xml serializing");
+            XmlSerializer xml = new XmlSerializer(typeof(Library));
+            using (FileStream fs = new FileStream("library.xml", FileMode.OpenOrCreate))
+            {
+                xml.Serialize(fs, lib);
+            }
+            WriteLine(File.ReadAllText("library.xml"));
+            // ------------  Xml DEserializing
+            Library lib3 = null;
+            using (FileStream fs = new FileStream("library.xml", FileMode.OpenOrCreate))
+            {
+                lib3 = xml.Deserialize(fs) as Library;
+                lib3.echo();
+            }
+
+            // ------------  JSON serializing
+            echo("JSON serializing");
+            JsonSerializer json = new JsonSerializer();
+            using (TextWriter fs = new StreamWriter(
+                new FileStream("library.json",FileMode.OpenOrCreate), Encoding.UTF8))
+            {
+                json.Serialize(fs, lib);
+            }
+            WriteLine(File.ReadAllText("library.json"));
 
         }
 
