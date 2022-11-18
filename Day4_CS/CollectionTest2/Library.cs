@@ -14,6 +14,7 @@ namespace andestech.learning.cs2022.library
 
     public delegate void NewBookHandler(string message);
 
+    [Serializable]
     [LibraryType(LibraryType.Gov)]
     public class Library
     {
@@ -26,7 +27,10 @@ namespace andestech.learning.cs2022.library
           NewBook?.Invoke($"Новый ресурс \"{book}\" поступил в библиотеку!"); 
         }
 
-
+        public void echo()
+        {
+            echo<Book>(Books);
+        }
 
         //............
 

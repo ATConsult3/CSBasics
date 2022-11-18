@@ -11,6 +11,7 @@ using System.Threading;
 
 namespace andestech.learning.cs2022.library
 {
+    [Serializable]
     public class Book
     {
       private static Random r = new Random((int)DateTime.Now.Ticks);
@@ -24,8 +25,10 @@ namespace andestech.learning.cs2022.library
 
         public override string ToString()
         {
-            return $"Книга '{Title}', {Author}.";
+            return $"Книга '{Title}', {Author}, ID:{ID}.";
         }
+
+       
 
     }
 

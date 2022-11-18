@@ -94,6 +94,23 @@ namespace andestech.learning.cs2022
 
             }
 
+            // Binary Writer
+            echo("Binary Writer");
+            using (
+                BinaryWriter bw =  new BinaryWriter( new FileStream("data.bin", FileMode.OpenOrCreate)))
+            {
+                bw.Write(1.23456789);
+                bw.Write((byte)254);
+                bw.Write(1212121212);
+            }
+
+            echo("Binary Reader");
+            using (
+                BinaryReader br = new BinaryReader(new FileStream("data.bin", FileMode.OpenOrCreate)))
+            {
+                WriteLine($"{br.ReadDouble()} -- {br.ReadByte()} -- {br.ReadInt32()}");
+            }
+
 
 
 
