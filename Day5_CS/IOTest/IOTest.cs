@@ -71,13 +71,20 @@ namespace andestech.learning.cs2022
 
 
             // ------------ Вариант 3 ----------
+            // Writer and Reader
             using (FileStream fs = new FileStream("greets", FileMode.OpenOrCreate))
             {
                 string greets = "Hi!!\nПривет!\nSalute!\nHello!";
                 byte[] barr = Encoding.UTF8.GetBytes(greets);
                 fs.Write(barr,0, barr.Length);
+
+                byte[] arr = new byte[fs.Length];
+                fs.Position = 0;
+                fs.Read(arr, 0, arr.Length);
+                WriteLine(Encoding.UTF8.GetString(arr));
             }
-            // Reader
+
+            // Reader only
             echo("FileStream reader from greets");
             using (FileStream fs = new FileStream("greets", FileMode.Open, FileAccess.Read))
             {
