@@ -11,15 +11,37 @@ using System.Threading;
 
 namespace andestech.learning.cs2022.library
 {
-    internal class Book
+    public class Book
     {
       private static Random r = new Random((int)DateTime.Now.Ticks);
       private int _id = r.Next(0, 4_000_000_00);
       public int ID { get => _id; }
-        
 
+      
       public string Author { get; set; } 
       public string Title { get; set; }
+        //.. todo
+
+        public override string ToString()
+        {
+            return $"Книга '{Title}', {Author}.";
+        }
+
+    }
+
+    public class Book2
+    {
+        private static Random r = new Random((int)DateTime.Now.Ticks);
+        private int _id = r.Next(0, 4_000_000_00);
+        public int ID { get => _id; }
+
+        public Book2(string author, string title)
+        {
+            Author = author; Title = title;
+        }
+
+        public string Author { get; private set; }
+        public string Title { get; private set; }
         //.. todo
 
         public override string ToString()

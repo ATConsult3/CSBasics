@@ -14,7 +14,8 @@ namespace andestech.learning.cs2022.library
 
     public delegate void NewBookHandler(string message);
 
-    internal class Library
+    [LibraryType(LibraryType.Gov)]
+    public class Library
     {
         public event NewBookHandler NewBook;
         public List<Book> Books { get; private set; } = new List<Book>();

@@ -43,8 +43,8 @@ namespace andestech.learning.cs2022
                 "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.dll"
                 );
             Type[] types = assembly.GetTypes();
-            foreach (Type t in types) WriteLine(t.FullName);   
-
+            foreach (Type t in types) WriteLine(t.FullName);
+           
 
 
 
